@@ -1,39 +1,94 @@
+<!-- Agregar link para Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500&display=swap" rel="stylesheet">
+
 <div class="row justify-content-center mt-5">
-    <div class="col-md-4">
-      <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
-        <div class="form-group">
-          <label>First Name</label>
-          <input
-            class="form-control"
-            type="text"
-            formControlName="firstName"
-            required
-          />
-        </div>
-  
-        <div class="form-group">
-          <label>Last Name</label>
-          <input
-            class="form-control"
-            type="text"
-            formControlName="lastName"
-            required
-          />
-        </div>
-  
-        <div class="form-group">
-          <label>Email</label>
-          <input
-            class="form-control"
-            type="text"
-            formControlName="emailId"
-            required
-          />
-        </div>
-        <br>
-        <div class="form-group">
-          <button class="btn btn-primary btn-block" type="submit">Update</button>
-        </div>
-      </form>
+  <div class="col-md-6 col-lg-4">
+    <div 
+      class="card shadow-lg" 
+      style="border-radius: 15px; background: linear-gradient(145deg, #f0f0f0, #e0e0e0);">
+      <div class="card-body">
+        <!-- Título estilizado -->
+        <h3 
+          class="card-title text-center mb-4" 
+          style="font-family: 'Poppins', sans-serif; font-size: 1.75rem; color: #5a5a5a;"
+        >
+          Actualizar Usuario
+        </h3>
+        <form [formGroup]="updateForm" (ngSubmit)="onUpdate()">
+          <!-- Campo: Nombre -->
+          <div class="form-group">
+            <label 
+              class="form-label" 
+              style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #333;"
+            >
+              Nombre
+            </label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="firstName"
+              placeholder="Ingrese el nombre"
+              style="font-family: 'Poppins', sans-serif; font-size: 0.95rem; border-radius: 12px; padding: 10px; background: #f9f9f9;"
+              required
+            />
+          </div>
+
+          <!-- Campo: Apellido -->
+          <div class="form-group mt-3">
+            <label 
+              class="form-label" 
+              style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #333;"
+            >
+              Apellido
+            </label>
+            <input
+              class="form-control"
+              type="text"
+              formControlName="lastName"
+              placeholder="Ingrese el apellido"
+              style="font-family: 'Poppins', sans-serif; font-size: 0.95rem; border-radius: 12px; padding: 10px; background: #f9f9f9;"
+              required
+            />
+          </div>
+
+          <!-- Campo: Correo Electrónico -->
+          <div class="form-group mt-3">
+            <label 
+              class="form-label" 
+              style="font-family: 'Poppins', sans-serif; font-size: 1rem; color: #333;"
+            >
+              Correo Electrónico
+            </label>
+            <input
+              class="form-control"
+              type="email"
+              formControlName="emailId"
+              placeholder="Ingrese el correo electrónico"
+              style="font-family: 'Poppins', sans-serif; font-size: 0.95rem; border-radius: 12px; padding: 10px; background: #f9f9f9;"
+              required
+            />
+          </div>
+
+          <!-- Botón estilizado -->
+          <div class="form-group mt-4 text-center">
+            <button 
+              class="btn btn-primary" 
+              type="submit" 
+              style="
+                font-family: 'Poppins', sans-serif; 
+                font-size: 1rem; 
+                padding: 10px 20px; 
+                border-radius: 50px; 
+                background: #a29bfe; 
+                color: white; 
+                border: none; 
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);"
+            >
+              Actualizar
+            </button>
+          </div>
+        </form>
+      </div>
     </div>
+  </div>
 </div>
