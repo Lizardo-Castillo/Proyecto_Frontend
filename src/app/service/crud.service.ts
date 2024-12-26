@@ -13,7 +13,7 @@ import {
 })
 export class CrudService {
   
-  REST_API: string = 'http://localhost:8080/api/v1';
+  REST_API: string = 'http://localhost:8080/api/v1/users';
 
   // Http Header
   httpHeaders = new HttpHeaders().set('Content-Type', 'application/json');
@@ -22,7 +22,7 @@ export class CrudService {
 
   // Add
   AddUser(data: User): Observable<any> {
-    let API_URL = `${this.REST_API}/users`;
+    let API_URL = `${this.REST_API}`;
     return this.httpClient
       .post(API_URL, data)
       .pipe(catchError(this.handleError));
@@ -30,12 +30,12 @@ export class CrudService {
 
   // Get all objects
   GetUsers() {
-    return this.httpClient.get(`${this.REST_API}/users`);
+    return this.httpClient.get(`${this.REST_API}`);
   }
 
   // Get single object
   GetUser(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/users/${id}`;
+    let API_URL = `${this.REST_API}/${id}`;
     return this.httpClient.get(API_URL, { headers: this.httpHeaders }).pipe(
       map((res: any) => {
         return res || {};
@@ -46,7 +46,7 @@ export class CrudService {
 
   // Update
   updateUser(id: any, data: any): Observable<any> {
-    let API_URL = `${this.REST_API}/users/${id}`;
+    let API_URL = `${this.REST_API}/${id}`;
     return this.httpClient
       .put(API_URL, data, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));
@@ -54,7 +54,7 @@ export class CrudService {
 
   // Delete
   deleteUser(id: any): Observable<any> {
-    let API_URL = `${this.REST_API}/users/${id}`;
+    let API_URL = `${this.REST_API}/${id}`;
     return this.httpClient
       .delete(API_URL, { headers: this.httpHeaders })
       .pipe(catchError(this.handleError));
